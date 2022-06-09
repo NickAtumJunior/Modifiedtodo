@@ -1,6 +1,6 @@
 import axiosApi from './intercepter';
 import HandleError from '../utlis/Error';
-import axios from 'axios';
+
 
 export default {
     methods: {
@@ -37,7 +37,7 @@ export default {
                })
            })
        },
-       delteData(PATH) {
+       deleteData(PATH) {
            return new Promise((accept,reject) =>{
                axiosApi
                .delete(`${PATH}`)

@@ -1,24 +1,24 @@
+import { LinearProgress } from '@mui/material';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux' 
-import { LinearProgress } from '@mui/material';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider>
-        <HelmetProvider>
-                <BrowserRouter>
-                    <React.Suspense fallback={<LinearProgress color='secondary'/>}>
-                       <App/>
-                    </React.Suspense>
-                </BrowserRouter>
-        </HelmetProvider>
+    <Provider store={store}>
+      <HelmetProvider>
+        <BrowserRouter basename='/examportal'>
+          <React.Suspense fallback={<LinearProgress color='secondary' />}>
+            <App />
+          </React.Suspense>
+        </BrowserRouter>
+      </HelmetProvider>
     </Provider>
   </React.StrictMode>
 );

@@ -1,12 +1,11 @@
-import './App.css';
-import Login from './pages/authentication/Login';
+import React from 'react';
+import Router from './routes/main';
 
 function App() {
   return (
-    <div className="App">
-        <h1>this thing works fine</h1>
-         <Login/>
-    </div>
+    <React.Fragment>
+      <Router />
+    </React.Fragment>
   );
 }
 

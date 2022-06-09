@@ -1,10 +1,9 @@
-import { Castle } from "@mui/icons-material";
 
 export default (error) =>{
     try{
         const {response} = error;
 
-        switch (Number(reponse.status)) {
+        switch (Number(response.status)) {
             case 400:
                 return response.data.message;
         
