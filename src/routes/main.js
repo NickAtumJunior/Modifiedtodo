@@ -1,4 +1,4 @@
-import { CircularProgress } from '@mui/material';
+import {  LinearProgress } from '@mui/material';
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ProtectedRoutes from '../security/Protected';
@@ -7,7 +7,7 @@ import TodoLayout from '../layouts/mainlayout/TodoLayout';
 const Loadable = (Component) => (props) => {
 
   return (
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense fallback={<LinearProgress />}>
       <Component {...props} />
     </Suspense>
   );

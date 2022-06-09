@@ -83,7 +83,7 @@ export default function Login() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
  const style = {
-   backgroundColor:" #b2e9f9 "
+   backgroundColor:" #b2e9f9"
  }
   return (
     <ThemeProvider theme={theme}>
