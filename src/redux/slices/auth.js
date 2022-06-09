@@ -139,6 +139,7 @@ const slice = createSlice({
             state.error = action.payload
             state.isLoading = false
         },
+        
         [createTodoAction.pending]: (state) => {
             state.isLoading = true
         },
@@ -149,6 +150,21 @@ const slice = createSlice({
             state.isLoading  = false
         },
         [createTodoAction.rejected]: (state, action) => {
+            state.error = action.payload
+            state.isLoading = false
+        },
+        [updateTodoAction.pending]: (state) => {
+            state.isLoading = true
+        },
+        [updateTodoAction.fulfilled]: (state, {payload}) =>{
+            let temp = [...state.todos];
+            let index = temp.findIndex((a) => a.id === payload.id);
+            temp.splice(index, 1);
+            temp.push(payload);
+            state.todos = temp;
+            state.isLoading  = false
+        },
+        [updateTodoAction.rejected]: (state, action) => {
             state.error = action.payload
             state.isLoading = false
         },

@@ -59,6 +59,7 @@ export default function Todo() {
 
   const handleUpdate = (e, event) => {
     console.log(value);
+    
     try {
       e.preventDefault();
       if (event === 'add') {
